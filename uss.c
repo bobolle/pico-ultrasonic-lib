@@ -13,15 +13,19 @@ void uss_init(uint8_t trigger_pin, uint8_t echo_pin) {
     gpio_put(trigger_pin, 0);
 }
 
-uint64_t get_pulse_duration(uint8_t trigger_pin, uint8_t echo_pin, uint64_t timeout) {
+uint get_pulse_duration(uint8_t trigger_pin, uint8_t echo_pin, uint64_t timeout) {
     gpio_put(trigger_pin, 1);
     sleep_us(10);
     gpio_put(trigger_pin, 0);
 
+    uint64_t time = 0;
+
+    while (gpio_get(echo_pin) == 0) {
+        tight_loop_contents();
+    }
+
     // save time of beginning of sending pulse
     absolute_time_t start_time = get_absolute_time();
-
-    uint64_t time = 0;
 
     while (gpio_get(echo_pin) == 1) {
         time++;
