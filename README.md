@@ -1,1 +1,1 @@
-# UltrasonicSensor-Library
+# pico-ultrasonic-lib
