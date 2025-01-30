@@ -7,4 +7,6 @@ void uss_init(uint8_t trigger_pin, uint8_t echo_pin);
 // going out of range of timeout will return 0
 uint get_pulse_duration(uint8_t trigger_pin, uint8_t echo_pin, uint64_t timeout);
 
+uint get_pulse_cm(uint8_t trigger_pin, uint8_t echo_pin, uint64_t timeout);
+
 #endif

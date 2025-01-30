@@ -41,3 +41,14 @@ uint get_pulse_duration(uint8_t trigger_pin, uint8_t echo_pin, uint64_t timeout)
 
     return absolute_time_diff_us(start_time, end_time);
 }
+
+uint get_pulse_cm(uint8_t trigger_pin, uint8_t echo_pin, uint64_t timeout) {
+    float temp = 20;
+    // shamelessly stolen from freenove
+    double reciprocalVelocity = 10000 / (331.45 + (0.62 * temp));
+
+    uint duration = get_pulse_duration(trigger_pin, echo_pin, timeout);
+    uint distance = ((duration / 2) / reciprocalVelocity);
+
+    return distance;
+}
