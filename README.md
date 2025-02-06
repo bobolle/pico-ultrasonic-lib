@@ -1,6 +1,6 @@
 # pico-ultrasonic-lib
 
-## Features
+## features
 
 - Get distance in cm from a pulse.
 - Get duration in ms from a pulse.
@@ -10,7 +10,7 @@
 - clone the repo to your project
 - add it to your CMakeLists.txt
 
-Example usage:
+example usage:
 ```
 uss_init(TRIGGER_PIN, ECHO_PIN);
 
