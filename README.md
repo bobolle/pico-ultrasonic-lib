@@ -2,8 +2,8 @@
 
 ## features
 
-- Get distance in cm from a pulse.
-- Get duration in ms from a pulse.
+- get distance in cm from a pulse.
+- get duration in ms from a pulse.
 
 ## installation
 
